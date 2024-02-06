@@ -131,6 +131,9 @@ form.addEventListener("keyup", (e) => {
   }
 });
 
+// footer
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
 // Fake Loader JS
 $(document).ready(function () {
   $.fakeLoader({

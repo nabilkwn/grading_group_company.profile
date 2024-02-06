@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link Online Here -->
+    <!-- Bootstap CSS & Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Link Lokal Here -->
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <title>Media Informasi</title>
+
+    <style>
+      /* navbar */
+      .navbar {
+        background-color: #59b4c3;
+        font-weight: bold;
+      }
+      .navbar-brand {
+        color: #fff;
+        text-shadow: 1px 1px black;
+      }
+      .navbar-brand:hover {
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .navbar-nav a {
+        text-decoration: none;
+        color: #fff;
+      }
+      .navbar-nav a:hover {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* content */
+      .title-content h1 {
+        margin-top: 4em;
+        text-align: center;
+      }
+
+      .faq-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 4em;
+      }
+
+      details {
+        font-size: 1rem;
+        margin: 0 auto;
+        width: 100%;
+        background: #f6faff;
+        border-radius: 8px;
+        position: relative;
+        max-width: 600px;
+        border: 1px solid #c3deff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      details:hover {
+        border: 1px solid #a4a1ff;
+      }
+
+      summary {
+        user-select: none;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        list-style: none;
+        padding: 1em;
+        align-items: center;
+      }
+
+      summary:hover .faq-title {
+        opacity: 1;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary:focus {
+        outline: none;
+      }
+
+      summary:hover .expand-icon {
+        opacity: 1;
+      }
+
+      .faq-title {
+        color: #1c2035;
+        width: 90%;
+        opacity: 0.65;
+        transition: all 250ms ease-in-out;
+      }
+
+      .faq-content {
+        color: #303651;
+        padding: 0.2em 1em 1em 1em;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .expand-icon {
+        opacity: 0.65;
+      }
+
+      .expand-icon {
+        pointer-events: none;
+        position: absolute;
+        right: 1em;
+        transition: all 150ms ease-out;
+      }
+
+      /* blog */
+      .title-content-2 h1 {
+        margin: 5rem 0;
+        text-align: center;
+      }
+
+      .container-blog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container-blog .second {
+        margin-top: 5rem;
+      }
+
+      .blog {
+        padding: 2rem;
+        font-size: 1rem;
+        max-width: 60em;
+        width: 100%;
+        container-name: card-blog;
+        container-type: inline-size;
+      }
+
+      .card-blog {
+        display: flex;
+        border: 1px solid #e6e5ff;
+        border-radius: 12px;
+        background-color: #f4f6f9;
+        cursor: pointer;
+        overflow: hidden;
+        min-height: 360px;
+        flex-direction: column;
+      }
+
+      .card-blog:hover {
+        box-shadow: 0 24px 72px 0 rgba(96, 93, 255, 0.1);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        justify-content: start;
+        padding: 16px;
+      }
+
+      .background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .card-type {
+        height: 36px;
+        padding: 4px 12px;
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        gap: 8px;
+        color: #2e5a8c;
+        background-color: #dfe6ee;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .latest-article {
+        height: 36px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #e6e5ff;
+        color: #605dff;
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .card-content > h2 {
+        font-weight: 700;
+      }
+
+      .card-content > p {
+        font-weight: 400;
+        margin: 6px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .blog-author {
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 4px 20px 4px 4px;
+        column-gap: 8px;
+        border: 1px solid #e6e5ff;
+        background-color: #fff;
+        border-radius: 32px;
+        height: 56px;
+      }
+
+      .blog-author__name {
+        font-weight: 700;
+      }
+
+      .blog-author__alias {
+        color: #605dff;
+        font-weight: 500;
+      }
+
+      .blog-author img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .blog-preview__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .blog-preview__bottom {
+        margin-top: auto;
+      }
+
+      .go-to-article-button {
+        padding: 8px;
+        min-height: 36px;
+        min-width: 56px;
+        width: 100%;
+        max-width: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: #e6e5ff;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid transparent;
+      }
+
+      .go-to-article-button svg {
+        width: 64px;
+        stroke: #2e5a8c;
+      }
+
+      .go-to-article-button:hover {
+        border: 1px solid #605dff;
+      }
+
+      @container card-blog (min-width:600px) {
+        .card-blog {
+          flex-direction: row;
+          padding: 32px;
+          gap: 32px;
+        }
+
+        .background {
+          flex: 3;
+          overflow: hidden;
+        }
+
+        .content {
+          flex: 4;
+          padding: 0px;
+        }
+
+        .background img {
+          border-radius: 8px;
+        }
+
+        .card-blog-content p {
+          -webkit-line-clamp: 6;
+        }
+      }
+
+      /* footer */
+      footer {
+        background-color: #59b4c3;
+        margin-top: 8rem;
+      }
+
+      footer a {
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
+        .faq-container {
+          margin-top: 2em;
+        }
+        .title-content-2 h1 {
+          margin: 2rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-default fixed-top shadow">
+      <div class="container">
+        <a class="navbar-brand" href="#order">
+          <img src="../assets/img/logo.png" alt="logo" width="50" />
+          Grading Group
+        </a>
+        <ul class="navbar-nav ms-auto">
+          <li class="navbar-item">
+            <a class="navbar-link" href="../index.html"
+              ><i class="bi bi-reply-fill"></i> Back
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!-- content  -->
+    <div class="title-content">
+      <h1>Informasi Pelayanan</h1>
+    </div>
+
+    <section class="content" id="content">
+      <div class="faq-container">
+        <details>
+          <summary>
+            <span class="faq-title">
+              Apakah Saya Bisa Berbincang-Bincang Terlebih Dahulu?</span
+            >
+            <img src="../assets/svg/plus.svg" class="expand-icon" alt="Plus" />
+          </summary>
+          <div class="faq-content">
+            Tentu Saja! Anda Bisa Menanyakan Kepada Kami Lewat Form Contact Yang
+            Tersedia.
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="faq-title">
+              Bagaimana Cara Saya Memesan Jasa Dari Grading Group?
+            </span>
+            <img src="../assets/svg/plus.svg" class="expand-icon" alt="Plus" />
+          </summary>
+          <div class="faq-content">
+            Hubungi Contact Kami Di Pojok Kanan Atas Halaman Utama.
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="faq-title"
+              >Apa Itu Landing Page? Dan Apa Keuntungan Saya Memilikinya?</span
+            >
+            <img src="../assets/svg/plus.svg" class="expand-icon" alt="Plus" />
+          </summary>
+          <div class="faq-content">
+            Landing Page Merupakan Website Penjualan Terhadap Bisnis Yang Anda
+            Punya. Mengembangkan Dan Mendigitalisasi Produk Anda Ke Jaringan
+            Yang Lebih Luas Agar Konsumen Memiliki Kemudahan Mendapatkan
+            Informasi Terhadap Produk Dari Bisnis Anda.
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="faq-title"
+              >Mengapa Ada Pelayanan Akuntan Di Grading Group</span
+            >
+            <img src="../assets/svg/plus.svg" class="expand-icon" alt="Plus" />
+          </summary>
+          <div class="faq-content">
+            Tujuan Kami Tentu Membantu Para Bisnis / UMKM Yang Baru Didirikan
+            Memberikan Pelayanan Administrasi, Pajak, Dan Konsultasi Keuangan
+            Bisnis, Selain Bisnis Anda Di Digitalisasi.
+          </div>
+        </details>
+        <details>
+          <summary>
+            <span class="faq-title"
+              >Apakah Pelayanan Jasa Di Grading Group Mahal?</span
+            >
+            <img src="../assets/svg/plus.svg" class="expand-icon" alt="Plus" />
+          </summary>
+          <div class="faq-content">
+            Jangan Takut😃, Tujuan Kami Adalah Agar Bisnis Baru Anda Maju Dan
+            Terdigitalisasi Mengikuti Perkembangan Zaman. Semua Pelayanan Bisa
+            Di Negoisasikan😉
+          </div>
+        </details>
+      </div>
+    </section>
+    <!-- content end -->
+
+    <!-- blog -->
+    <div class="title-content-2">
+      <h1>Blog Informasi</h1>
+    </div>
+
+    <section class="container-blog">
+      <div class="blog">
+        <article class="card-blog">
+          <div class="background">
+            <img src="../assets/img/preview.png" alt="Blog Preview Image" />
+          </div>
+          <div class="content">
+            <div class="card-header">
+              <div class="card-type">Web Dev</div>
+              <div class="latest-article">Latest Article</div>
+            </div>
+            <div class="card-content">
+              <h2>
+                Using Fetch API For Executing GraphQL Queries And Mutations
+              </h2>
+              <p>
+                GraphQL is a powerful tool for querying data from remote servers
+                and my preferred way of building APIs (Application Programming
+                Interface). For some people, it might be difficult to learn as
+                the tutorials are usually written using tools such as Apollo or
+                Relay. These tools are great but often suited for more
+                complicated projects. In certain scenarios, there might be
+                better to choose a more lightweight approach and not increase
+                bundle size with additional libraries. In these cases, you can
+                work directly with the tools available in the browser. In this
+                quick tutorial, we will use fetch, commonly available in your
+                browser. Let’s first quickly revise what fetch is and how it is
+                usually used with REST API, then we can move to simple GraphQL
+                queries execution.
+              </p>
+            </div>
+            <div class="blog-preview__bottom">
+              <div class="blog-author">
+                <img src="../assets/img/nabil.jpeg" alt="Avatar" />
+                <div class="blog-author__name">
+                  <div class="blog-author__name">Nabil Kurniawan</div>
+                  <a
+                    rel="author"
+                    href="mailto:david@atheros.ai"
+                    class="blog-author__alias"
+                  >
+                    @nabilkwn
+                  </a>
+                </div>
+              </div>
+              <a class="go-to-article-button" href="/my-blog" title="New Blog">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-arrow-narrow-right"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l14 0" />
+                  <path d="M15 16l4 -4" />
+                  <path d="M15 8l4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="card-blog second">
+          <div class="background">
+            <img src="../assets/img/preview.png" alt="Blog Preview Image" />
+          </div>
+          <div class="content">
+            <div class="card-header">
+              <div class="card-type">Finance</div>
+              <div class="latest-article">5 Days Ago</div>
+            </div>
+            <div class="card-content">
+              <h2>
+                Using Fetch API For Executing GraphQL Queries And Mutations
+              </h2>
+              <p>
+                GraphQL is a powerful tool for querying data from remote servers
+                and my preferred way of building APIs (Application Programming
+                Interface). For some people, it might be difficult to learn as
+                the tutorials are usually written using tools such as Apollo or
+                Relay. These tools are great but often suited for more
+                complicated projects. In certain scenarios, there might be
+                better to choose a more lightweight approach and not increase
+                bundle size with additional libraries. In these cases, you can
+                work directly with the tools available in the browser. In this
+                quick tutorial, we will use fetch, commonly available in your
+                browser. Let’s first quickly revise what fetch is and how it is
+                usually used with REST API, then we can move to simple GraphQL
+                queries execution.
+              </p>
+            </div>
+            <div class="blog-preview__bottom">
+              <div class="blog-author">
+                <img src="../assets/img/alif.jpeg" alt="Avatar" />
+                <div class="blog-author__name">
+                  <div class="blog-author__name">Alif Jr</div>
+                  <a
+                    rel="author"
+                    href="mailto:david@atheros.ai"
+                    class="blog-author__alias"
+                  >
+                    @m.sholahudin
+                  </a>
+                </div>
+              </div>
+              <a class="go-to-article-button" href="/my-blog" title="New Blog">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon icon-tabler icon-tabler-arrow-narrow-right"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l14 0" />
+                  <path d="M15 16l4 -4" />
+                  <path d="M15 8l4 4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- blog end -->
+
+    <!-- footer -->
+    <footer class="text-white text-center pb-3 pt-4">
+      <p>
+        &copy 2024 Created with
+        <i class="bi bi-suit-heart-fill" style="color: yellow"></i> By
+        <a href="https://www.github.com" class="text-white fw-bold"
+          >Grading Group</a
+        >
+      </p>
+    </footer>
+    <!-- footer end -->
+
+    <script>
+      class Accordion {
+        constructor(el) {
+          this.el = el;
+          this.summary = el.querySelector("summary");
+          this.content = el.querySelector(".faq-content");
+          this.expandIcon = this.summary.querySelector(".expand-icon");
+          this.animation = null;
+          this.isClosing = false;
+          this.isExpanding = false;
+          this.summary.addEventListener("click", (e) => this.onClick(e));
+        }
+
+        onClick(e) {
+          e.preventDefault();
+          this.el.style.overflow = "hidden";
+
+          if (this.isClosing || !this.el.open) {
+            this.open();
+          } else if (this.isExpanding || this.el.open) {
+            this.shrink();
+          }
+        }
+
+        shrink() {
+          this.isClosing = true;
+
+          const startHeight = `${this.el.offsetHeight}px`;
+          const endHeight = `${this.summary.offsetHeight}px`;
+
+          if (this.animation) {
+            this.animation.cancel();
+          }
+
+          this.animation = this.el.animate(
+            {
+              height: [startHeight, endHeight],
+            },
+            {
+              duration: 400,
+              easing: "ease-out",
+            }
+          );
+
+          this.animation.onfinish = () => {
+            this.expandIcon.setAttribute("src", "../assets/svg/plus.svg");
+            return this.onAnimationFinish(false);
+          };
+          this.animation.oncancel = () => {
+            this.expandIcon.setAttribute("src", "../assets/svg/plus.svg");
+            return (this.isClosing = false);
+          };
+        }
+
+        open() {
+          this.el.style.height = `${this.el.offsetHeight}px`;
+          this.el.open = true;
+          window.requestAnimationFrame(() => this.expand());
+        }
+
+        expand() {
+          this.isExpanding = true;
+
+          const startHeight = `${this.el.offsetHeight}px`;
+          const endHeight = `${
+            this.summary.offsetHeight + this.content.offsetHeight
+          }px`;
+
+          if (this.animation) {
+            this.animation.cancel();
+          }
+
+          this.animation = this.el.animate(
+            {
+              height: [startHeight, endHeight],
+            },
+            {
+              duration: 350,
+              easing: "ease-out",
+            }
+          );
+
+          this.animation.onfinish = () => {
+            this.expandIcon.setAttribute("src", "../assets/svg/minus.svg");
+            return this.onAnimationFinish(true);
+          };
+          this.animation.oncancel = () => {
+            this.expandIcon.setAttribute("src", "../assets/svg/minus.svg");
+            return (this.isExpanding = false);
+          };
+        }
+
+        onAnimationFinish(open) {
+          this.el.open = open;
+          this.animation = null;
+          this.isClosing = false;
+          this.isExpanding = false;
+          this.el.style.height = this.el.style.overflow = "";
+        }
+      }
+
+      document.querySelectorAll("details").forEach((el) => {
+        new Accordion(el);
+      });
+    </script>
+  </body>
+</html>
