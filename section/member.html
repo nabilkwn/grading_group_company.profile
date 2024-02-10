@@ -27,6 +27,8 @@
       referrerpolicy="no-referrer"
     />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <!-- Link Lokal Here -->
     <link
       rel="shortcut icon"
@@ -142,6 +144,115 @@
         gap: 15px;
       }
 
+      /* comitment */
+      .text-header {
+        text-align: center;
+        color: azure;
+        margin: 0.8rem 0;
+      }
+
+      .commitment {
+        display: flex;
+        justify-content: center;
+      }
+
+      .tabs-container {
+        padding: 1rem;
+        width: 100%;
+        max-width: 40rem;
+        min-width: 20rem;
+        display: flex;
+        margin: 10px;
+        border-radius: 1rem;
+        background-color: #1f192d;
+        border: 1px solid #42375d;
+      }
+
+      .tab-content-wrapper {
+        overflow-y: hidden;
+        overflow-x: auto;
+        height: 300px;
+        transition: all 0.45s ease-in-out;
+        padding: 0 1rem;
+      }
+
+      .tab-content h2 {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 0px;
+        margin-bottom: 8px;
+      }
+
+      .tab-content {
+        font-size: 0.8rem;
+        min-height: 300px;
+        min-width: 240px;
+
+        color: #fff;
+        overflow-x: auto;
+        transition: all 0.45s ease-in-out;
+      }
+
+      .tab-content img {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+      }
+
+      .tabs {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #363638;
+        list-style-type: none;
+        padding-right: 1rem;
+        gap: 8px;
+      }
+
+      .tabs a {
+        position: relative;
+        display: flex;
+        text-decoration: none;
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+        border-radius: 8px;
+        justify-content: start;
+        padding: 12px;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        user-select: none;
+        border: 1px solid transparent;
+        transition: all 0.45s ease-in-out;
+      }
+
+      .tabs a img {
+        height: 20px;
+        width: 20px;
+      }
+
+      .tabs .active,
+      .tabs a:hover {
+        outline: none;
+        background-color: #3a2d54;
+        border: 1px solid #42375d;
+      }
+
+      .tabs a svg {
+        stroke: #fff;
+      }
+
+      .tabs .active svg {
+        stroke: #fff;
+      }
+
+      .tabs a:hover svg {
+        stroke: #fff;
+      }
+
       /* footer */
       footer {
         background-color: #000047;
@@ -156,6 +267,20 @@
       @media (max-width: 768px) {
         .profile {
           margin-left: 1.1rem;
+          margin-bottom: 2rem;
+        }
+        .tabs-container .tabs {
+          max-width: 12rem;
+        }
+        .text-header {
+          margin-top: 3rem;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .profile {
+          margin-left: 1.5rem;
+          margin-bottom: 2rem;
         }
       }
     </style>
@@ -183,51 +308,224 @@
     <section class="profile">
       <div class="hooh">
         <div class="cards">
-          <img src="../assets/img/nabil.jpeg" />
+          <img src="../assets/member/nabil.jpeg" />
           <h4>Nabil Kurniawan</h4>
           <p>FrontEnd Developer</p>
           <p>CO FOUNDER</p>
-          <a href="#"><button>Hubungi</button></a>
+          <a href="https://wa.me/620895618081674"><button>Hubungi</button></a>
           <div class="social-media">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/nabilkurniawan/"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/nabilkwn"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://www.threads.net/nabilwn"
+              ><i class="fa-brands fa-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/nabilkwn
+            "
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
           </div>
         </div>
       </div>
       <div class="hooh">
         <div class="cards">
-          <img src="../assets/img/uknown.jpg" />
+          <img src="../assets/member/uknown.jpg" />
           <h4>M. Fahri Wijaya</h4>
           <p>BackEnd Developer</p>
           <p>CO FOUNDER</p>
-          <a href="#"><button>Hubungi</button></a>
+          <a href="https://wa.me/620895604800809"><button>Hubungi</button></a>
           <div class="social-media">
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a
+              href="https://www.instagram.com/fahri_wijy
+            "
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
           </div>
         </div>
       </div>
       <div class="hooh">
         <div class="cards">
-          <img src="../assets/img/alif.jpeg" />
+          <img src="../assets/member/alif.jpeg" />
           <h4>M. Sholahudin Almagribi</h4>
           <p>Accountant</p>
           <p>Director of Administration and Finance</p>
-          <a href="#"><button>Hubungi</button></a>
+          <a href="https://wa.me/620895422982046"><button>Hubungi</button></a>
           <div class="social-media">
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.instagram.com/msholahuddinma"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
           </div>
         </div>
       </div>
     </section>
     <!-- card end -->
+
+    <!-- comitment start -->
+    <div class="text-header">
+      <h3>Skill Yang Harus kami Miliki</h3>
+    </div>
+
+    <section class="commitment">
+      <div class="tabs-container">
+        <ul class="tabs">
+          <li>
+            <a id="tab1" title="Analytics" href="#tab1">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 3v18h18"></path>
+                <path d="M20 18v3"></path>
+                <path d="M16 16v5"></path>
+                <path d="M12 13v8"></path>
+                <path d="M8 16v5"></path>
+                <path d="M3 11c6 0 5 -5 9 -5s3 5 9 5"></path>
+              </svg>
+              Analisis
+            </a>
+          </li>
+          <li>
+            <a id="tab2" title="Reports" href="#tab2">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                <path d="M7 3v4h4"></path>
+                <path d="M9 17l0 4"></path>
+                <path d="M17 14l0 7"></path>
+                <path d="M13 13l0 8"></path>
+                <path d="M21 12l0 9"></path>
+              </svg>
+              Ketepatan
+            </a>
+          </li>
+
+          <li>
+            <a id="tab3" title="Performance" href="#tab3">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+                ></path>
+                <path
+                  d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+                ></path>
+                <path
+                  d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+                ></path>
+                <path d="M4 20l14 0"></path>
+              </svg>
+              Kerja Keras
+            </a>
+          </li>
+          <li>
+            <a id="tab4" title="Funds" href="#tab4">
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M3 21l18 0"></path>
+                <path d="M3 10l18 0"></path>
+                <path d="M5 6l7 -3l7 3"></path>
+                <path d="M4 10l0 11"></path>
+                <path d="M20 10l0 11"></path>
+                <path d="M8 14l0 3"></path>
+                <path d="M12 14l0 3"></path>
+                <path d="M16 14l0 3"></path>
+              </svg>
+              Profesional
+            </a>
+          </li>
+        </ul>
+        <div class="tab-content-wrapper">
+          <article id="tab1-content" class="tab-content">
+            <h2>Analisis</h2>
+            <p>
+              Kemampuan Analisa Bagi Kami Sangat Penting Agar Suatu Tujuan
+              Bisnis Anda Dan Kemampuan Kami Sejalan Dengan Baik. Dan Kami Tentu
+              Akan Memberikan Yang Terbaik.
+            </p>
+            <img src="../assets/member/analytics.png" alt="Analytics" />
+          </article>
+          <article id="tab2-content" class="tab-content">
+            <h2>Ketepatan</h2>
+            <p>
+              Ketepatan Produk Yang Kami Kerjakan Tidak Mengecewakan Harapan
+              Yang Memesan Jasa Kami, Sehingga Bisnis Anda Bisa Berjalan Dengan
+              Lancar.
+            </p>
+            <img src="../assets/member/reports.png" alt="Reports" />
+          </article>
+          <article id="tab3-content" class="tab-content">
+            <h2>Kerja Keras</h2>
+            <p>
+              Kami Selalu Bekerja Keras Dan Selalu Memberikan Pelayanan Yang
+              Terbaik Untuk Client, Meski Kami Banyak Memiliki Kekurangan.
+            </p>
+            <img src="../assets/member/performance.png" alt="Performance" />
+          </article>
+          <article id="tab4-content" class="tab-content">
+            <h2>Profesional</h2>
+            <p>
+              Profesional. Itulah Slogan Utama Dari Grading Group. Kami Membuat
+              Pelayanan Jasa Secara Profesional Meskipun Client Kami Dari
+              Berbagai Kalangan, Profesionalisme Kami Adalah Tanggung Jawab.
+            </p>
+            <img src="../assets/member/funds.png" alt="Funds" />
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- comitment end -->
 
     <footer class="text-white text-center pb-3 pt-4">
       <p>
@@ -238,5 +536,57 @@
         >
       </p>
     </footer>
+
+    <script>
+      const allLinks = document.querySelectorAll(".tabs a");
+      const allTabs = document.querySelectorAll(".tab-content");
+      const tabContentWrapper = document.querySelector(".tab-content-wrapper");
+
+      const shiftTabs = (linkId) => {
+        allTabs.forEach((tab, i) => {
+          if (tab.id.includes(linkId)) {
+            allTabs.forEach((tabItem) => {
+              tabItem.style = `transform: translateY(-${i * 300}px);`;
+            });
+          }
+        });
+      };
+
+      allLinks.forEach((elem) => {
+        elem.addEventListener("click", function () {
+          const linkId = elem.id;
+          const hrefLinkClick = elem.href;
+
+          allLinks.forEach((link, i) => {
+            if (link.href == hrefLinkClick) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+
+          shiftTabs(linkId);
+        });
+      });
+
+      //? handle proper selection for initial load
+      const currentHash = window.location.hash;
+
+      let activeLink = document.querySelector(`.tabs a`);
+
+      if (currentHash) {
+        const visibleHash = document.getElementById(
+          `${currentHash.replace("#", "")}`
+        );
+
+        if (visibleHash) {
+          activeLink = visibleHash;
+        }
+      }
+
+      activeLink.classList.toggle("active");
+
+      shiftTabs(activeLink.id);
+    </script>
   </body>
 </html>

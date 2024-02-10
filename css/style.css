@@ -199,7 +199,7 @@ body {
 
 /* service */
 .service {
-  padding-top: 4rem;
+  padding-top: 5rem;
   padding-bottom: 2rem;
   text-align: center;
 }
@@ -414,7 +414,7 @@ footer {
 }
 
 .footer-columns h3 {
-  color: var(--text-primary);
+  color: var(--secondary);
   margin-top: 0;
   margin-bottom: 25px;
   font-size: 1.125rem;
@@ -478,6 +478,10 @@ footer {
   min-width: 40px;
   height: 2px;
   background-color: var(--text-gray);
+}
+
+.footer-bottom small span {
+  color: var(--secondary);
 }
 
 /*? socials */
