@@ -13,477 +13,27 @@
       rel="stylesheet"
     />
 
-    <!-- Link Lokal Here -->
+    <!-- Link Local Favicon-->
     <link
       rel="shortcut icon"
       href="../assets/img/favicon.ico"
       type="image/x-icon"
     />
 
-    <style>
-      /* sidebar */
-      @import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
-
-      :root {
-        --primary-color: #625bfe;
-        --primary-color-dark: #7771f6;
-        --button-color: #5433ff;
-        --button-color-shadow: #5433ff30;
-        --text-color: white;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Mulish;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body.collapsed aside {
-        width: 80px;
-      }
-
-      body.collapsed .hide {
-        opacity: 0;
-        pointer-events: none;
-        transition-delay: 0s;
-      }
-
-      body.collapsed .expand-btn img {
-        transform: rotate(-180deg);
-      }
-
-      aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        background-color: var(--primary-color);
-        width: 18rem;
-        padding: 1.8rem 0.85rem;
-        color: var(--text-color);
-        display: flex;
-        flex-direction: column;
-        transition: width 0.5s ease-in-out;
-      }
-
-      .sidebar-top {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-bottom: 32px;
-      }
-
-      .sidebar-top .logo {
-        position: relative;
-        width: 54px;
-        margin-right: 1.45rem;
-        left: -1px;
-      }
-
-      .sidebar-top h2 {
-        padding-left: 0.5rem;
-        font-weight: 600;
-        font-size: 1.4rem;
-      }
-
-      .expand-btn {
-        position: absolute;
-        top: 50%;
-        width: 45px;
-        height: 45px;
-        display: grid;
-        place-items: center;
-        background-color: var(--button-color);
-        border-radius: 6px;
-        cursor: pointer;
-        box-shadow: 0 3px 10px -3px var(--button-color-shadow);
-        right: -3rem;
-        transform: translateY(-50%) translateX(-8px);
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.3s;
-      }
-
-      aside:hover .expand-btn,
-      .expand-btn.hovered {
-        transform: translateY(-50%) translateX(0px);
-        opacity: 1;
-        pointer-events: all;
-      }
-
-      .sidebar-links ul {
-        list-style-type: none;
-        position: relative;
-      }
-
-      .sidebar-links li {
-        position: relative;
-      }
-
-      .sidebar-links li a {
-        padding: 12px;
-        color: var(--text-color);
-        font-size: 1.25rem;
-        display: flex;
-        align-items: center;
-        height: 56px;
-        text-decoration: none;
-        color: #fff;
-      }
-
-      .icon {
-        display: flex;
-        align-items: center;
-      }
-
-      .icon img {
-        width: 26px;
-        height: 26px;
-        margin: auto;
-      }
-
-      .sidebar-links .link {
-        margin-left: 40px;
-      }
-
-      .sidebar-links .active {
-        width: 100%;
-        text-decoration: none;
-        background-color: var(--primary-color-dark);
-        transition: all 100ms ease-in;
-        border-radius: 10px;
-      }
-
-      /* content */
-      .content {
-        margin: 2.8rem 2rem 0 6rem;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .text-header h1 {
-        font-weight: bold;
-        margin-top: 5px;
-        font-size: 3rem;
-        width: 50rem;
-      }
-
-      .text-header .corporate {
-        color: var(--primary-color-dark);
-        margin-top: 6px;
-        font-weight: bold;
-      }
-
-      .text-header .time {
-        font-size: 0.8rem;
-        margin-top: 4px;
-        color: #44435b;
-      }
-
-      .text-header .share {
-        margin-top: 1.6rem;
-        display: flex;
-        margin-left: 43rem;
-        margin-bottom: 10px;
-      }
-
-      .text-header .share img {
-        height: 20px;
-      }
-
-      .image-header img {
-        width: 50rem;
-      }
-
-      .image-header span {
-        margin-top: 10px;
-        font-size: 1rem;
-        color: #44435b;
-        font-style: italic;
-      }
-
-      .text-content p {
-        margin-top: 1.6rem;
-        margin-bottom: 1rem;
-      }
-
-      /* share */
-      .share {
-        margin: 1.8rem 2rem 0 6rem;
-      }
-
-      .share .next-page {
-        background-color: var(--button-color);
-        width: 50rem;
-        padding: 1rem;
-        text-decoration: none;
-      }
-
-      .share .next-page p {
-        color: yellow;
-      }
-
-      .share .next-page h3 {
-        color: white;
-      }
-
-      /* button share */
-      .button-share {
-        display: flex;
-        margin-top: 1rem;
-      }
-
-      .share-button {
-        margin-top: 1rem;
-      }
-
-      .button-share .share-btn {
-        border-radius: 50%;
-        appearance: none;
-        padding: 1rem;
-        color: #323ac0;
-        outline: none;
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
-        background-color: var(--text-color);
-        border: none;
-      }
-
-      .button-share .share-btn:hover {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 12px;
-      }
-
-      .button-share .share-btn svg {
-        stroke: #323ac0;
-      }
-
-      header .close-btn {
-        background-color: inherit;
-        cursor: pointer;
-        border: none;
-      }
-
-      header .close-btn svg {
-        stroke: #9ba2a4;
-        height: 1.75rem;
-        width: 1.75rem;
-      }
-
-      .button-share .copy-link-dialog {
-        border-radius: 0.75rem;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        max-width: 36rem;
-        margin: 0 auto;
-        width: 100%;
-        margin-top: 4rem;
-        border: none;
-        background-color: var(--text-color);
-        animation: fadeInAnimation ease-in-out 0.5s forwards;
-      }
-
-      .copy-link-dialog header {
-        display: flex;
-        min-height: 4rem;
-        padding: 1.5rem 2rem 0.75rem 2rem;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid #f3f3f4;
-      }
-
-      .copy-link-dialog header h2 {
-        font-size: 1.5rem;
-        color: #1a1e1f;
-      }
-
-      .copy-link-dialog--fadeout {
-        animation: fadeOutAnimation ease-in-out 0.5s forwards;
-      }
-
-      form .copy-link-dialog__content {
-        padding: 2rem;
-      }
-
-      .copy-link-dialog__content .copy-link-wrapper {
-        display: flex;
-        color: #6d7679;
-        border-radius: 0.5rem;
-        font-weight: 700;
-        color: #252728;
-        justify-content: space-between;
-        background-color: #f3f3f4;
-        padding: 0.25rem;
-        padding-left: 1.5rem;
-      }
-
-      .copy-link-dialog__content .copy-link-wrapper input {
-        color: #6d7679;
-        outline: none;
-        border: none;
-        width: 100%;
-        font-weight: 800;
-        background-color: inherit;
-        font-size: 1.2rem;
-      }
-
-      .copy-link-dialog__content .copy-link-wrapper input::selection {
-        background-color: #323ac0;
-        color: var(--text-color);
-      }
-
-      .copy-link-dialog header h2 {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-        color: #252728;
-      }
-
-      .copy-link-dialog__content .copy-link-wrapper button {
-        color: #323ac0;
-        white-space: nowrap;
-        padding: 0.5rem 1rem;
-        border-radius: 0.4rem;
-        font-weight: 800;
-        cursor: pointer;
-        display: flex;
-        gap: 0.5rem;
-        font-size: 1.1rem;
-        align-items: center;
-        background-color: var(--text-color);
-        border: none;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 6px;
-      }
-
-      /* icon share */
-      .button-share .share-icon {
-        background-color: var(--background);
-        display: grid;
-        place-items: center;
-      }
-
-      .share-icon .social-media-buttons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 16px;
-        list-style: none;
-      }
-
-      .share-icon .social-media-buttons li {
-        width: 40px;
-        height: 40px;
-        border-radius: 8px;
-        cursor: pointer;
-        display: grid;
-        background-color: white;
-        place-items: center;
-        transition: all 0.3s;
-        border: 1px solid white;
-      }
-
-      .share-icon .social-media-buttons li a {
-        display: grid;
-        place-items: center;
-        width: 100%;
-        height: 100%;
-        color: #2c2c2c;
-      }
-
-      .share-icon .social-media-buttons li:hover {
-        background-color: #2c2c2c;
-        border: 1px solid white;
-        border-radius: 8px;
-      }
-
-      .share-icon .social-media-buttons li a svg {
-        height: 24px;
-        width: 24px;
-        stroke: #2c2c2c;
-        stroke-width: 1.75;
-        transition: 0.8s;
-      }
-
-      .share-icon .social-media-buttons li:hover svg {
-        stroke: white;
-        transform: rotateY(360deg);
-        stroke-width: 1.75;
-      }
-
-      @keyframes fadeInAnimation {
-        0% {
-          opacity: 0;
-          visibility: hidden;
-        }
-
-        100% {
-          opacity: 1;
-          visibility: visible;
-        }
-      }
-
-      @media (max-width: 768px) {
-        aside {
-          width: 55%;
-        }
-
-        .content {
-          margin: 2.8rem 2rem 0 6rem;
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .text-header h1 {
-          font-size: 2rem;
-          width: 100%;
-        }
-
-        .text-header .share {
-          margin-left: 0;
-          margin-bottom: 0;
-          font-size: 0.8rem;
-        }
-
-        .text-header .share img {
-          height: 16px;
-        }
-
-        .image-header img {
-          width: 100%;
-        }
-
-        .image-header span {
-          margin-top: 2px;
-          font-size: 0.6rem;
-          color: #44435b;
-          font-style: italic;
-        }
-
-        .share .next-page {
-          width: 100%;
-        }
-
-        .share-icon .social-media-buttons .linkedin {
-          display: none;
-        }
-      }
-    </style>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="blog.css" />
+
+    <!-- Script Purify -->
+    <script src="purify.min.js"></script>
   </head>
   <body>
     <!-- Sidebar Start -->
     <aside>
       <div class="sidebar-top">
         <span class="expand-btn">
-          <img src="../assets/blog/chevron.svg" alt="Chevron" />
+          <img src="assets/chevron.svg" alt="Chevron" />
         </span>
-        <img src="../assets/blog/logo.png" class="logo" alt="GG-Blog Logo" />
+        <img src="assets/logo.png" class="logo" alt="GG-Blog Logo" />
         <h3 class="hide">GG-Blog</h3>
       </div>
       <div class="sidebar-links">
@@ -491,7 +41,7 @@
           <li>
             <a href="../index.html" class="active" title="Home link">
               <div class="icon">
-                <img src="../assets/blog/home.svg" title="Home Icon" />
+                <img src="assets/home.svg" title="Home Icon" />
               </div>
               <span class="link hide">Home</span>
             </a>
@@ -499,7 +49,7 @@
           <li>
             <a href="#content" title="Content link">
               <div class="icon">
-                <img src="../assets/blog/content.svg" title="Content Icon" />
+                <img src="assets/content.svg" title="Content Icon" />
               </div>
               <span class="link hide">Content</span>
             </a>
@@ -507,15 +57,15 @@
           <li>
             <a href="#share" title="Share Link">
               <div class="icon">
-                <img src="../assets/blog/share.svg" title="Share Icon" />
+                <img src="assets/share.svg" title="Share Icon" />
               </div>
               <span class="link hide">Share</span>
             </a>
           </li>
           <li>
-            <a href="#comment" title="Comment link">
+            <a href="#comments" title="Comment link">
               <div class="icon">
-                <img src="../assets/blog/comment.svg" title="Comment Icon" />
+                <img src="assets/comment.svg" title="Comment Icon" />
               </div>
               <span class="link hide">Comment</span>
             </a>
@@ -536,16 +86,12 @@
           <p class="time">Rabu, 15 February 2024. 13.28</p>
           <div class="share">
             <p>SHARE |</p>
-            <a href=""
-              ><img src="../assets/blog/facebook.jpg" alt="facebook"
-            /></a>
-            <a href=""
-              ><img src="../assets/blog/twitter.png" alt="twitter"
-            /></a>
+            <a href=""><img src="assets/facebook.jpg" alt="facebook" /></a>
+            <a href=""><img src="assets/twitter.png" alt="twitter" /></a>
           </div>
         </div>
         <div class="image-header">
-          <img src="../assets/blog/blog_nabil.jpg" alt="Pekerjaan IT" />
+          <img src="assets/blog_nabil.jpg" alt="Pekerjaan IT" />
           <div>
             <span
               >Menurut Institute for the Future (IFTF), Diperkirakan 85 persen
@@ -805,74 +351,58 @@
     <!-- share end -->
 
     <!-- comment start -->
-
+    <section class="comments" id="comments">
+      <div class="discussion">
+        <div class="discussion__header">
+          <div class="authed-user"></div>
+          <form id="newcomment__form">
+            <textarea
+              tabindex="1"
+              cols="150"
+              rows="4"
+              minlength="5"
+              required
+              placeholder="Write a comment"
+            ></textarea>
+            <div class="newcomment__toolbar">
+              <button
+                id="reset-button"
+                class="button--secondary"
+                tabindex="3"
+                type="button"
+              >
+                Reset
+              </button>
+              <button
+                id="confirm-button"
+                class="button--primary"
+                tabindex="2"
+                type="submit"
+              >
+                Comment
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="discussion__comments">
+          <!-- will be generated -->
+        </div>
+      </div>
+    </section>
     <!-- comment end -->
 
-    <script>
-      document.addEventListener("click", function (event) {
-        const sidebar = document.querySelector("aside");
-        const expandBtn = document.querySelector(".expand-btn");
+    <!-- footer -->
+    <footer>
+      <marquee behavior="" direction=""
+        ><p>
+          &copy 2024 Created with
+          <a href="https://www.github.com">Grading Group</a>
+        </p></marquee
+      >
+    </footer>
+    <!-- footer end -->
 
-        // Cek apakah yang diklik adalah di luar sidebar dan tidak pada tombol expand
-        if (!sidebar.contains(event.target) && event.target !== expandBtn) {
-          document.body.classList.add("collapsed");
-        }
-      });
-
-      const expand_btn = document.querySelector(".expand-btn");
-
-      let activeIndex;
-
-      expand_btn.addEventListener("click", () => {
-        document.body.classList.toggle("collapsed");
-      });
-
-      const current = window.location.href;
-
-      const allLinks = document.querySelectorAll(".sidebar-links a");
-
-      allLinks.forEach((elem) => {
-        elem.addEventListener("click", function () {
-          const hrefLinkClick = elem.href;
-
-          allLinks.forEach((link) => {
-            if (link.href == hrefLinkClick) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          });
-        });
-      });
-
-      // share
-      const modalDialog = document.querySelector(".copy-link-dialog");
-      const shareBtn = document.querySelector(".share-btn");
-      const closeBtn = document.querySelector(".close-btn");
-      const copyBtn = document.querySelector(".copy-btn");
-
-      shareBtn.addEventListener("click", () => {
-        modalDialog.classList.remove("copy-link-dialog--fadeout");
-        modalDialog.showModal();
-      });
-
-      closeBtn.addEventListener("click", () => {
-        modalDialog.classList.add("copy-link-dialog--fadeout");
-
-        modalDialog.close();
-      });
-
-      copyBtn.addEventListener("click", () => {
-        const copyInput = document.getElementById("copy-link-input");
-
-        copyInput.select();
-        copyInput.setSelectionRange(0, 99999);
-
-        navigator.clipboard.writeText(copyInput.value);
-
-        const copyText = document.getElementById("copy-text");
-        copyText.innerHTML = "Copied!";
-      });
-    </script>
+    <!-- Link JavaScript -->
+    <script src="blog.js"></script>
   </body>
 </html>
