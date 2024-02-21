@@ -191,6 +191,14 @@ aside:hover .expand-btn,
   margin-bottom: 1rem;
 }
 
+.text-content .text-bold {
+  font-weight: bold;
+}
+
+.content .text-content .text-image {
+  width: 15rem;
+}
+
 /* share */
 .share {
   margin: 1.8rem 2rem 0 6rem;
@@ -559,6 +567,10 @@ footer a {
 
   .share-icon .social-media-buttons .linkedin {
     display: none;
+  }
+
+  .comments {
+    margin-left: 4rem;
   }
 
   footer {

@@ -3,7 +3,7 @@ $(window).scroll(function () {
   // navbar transparant to color on scrollTop
   $("nav").toggleClass("scrolled", $(this).scrollTop() > 250);
 
-  // jumbotron Portofolio
+  // hero Portofolio
   var wScroll = $(this).scrollTop();
 
   $(".hero img").css({
@@ -29,20 +29,13 @@ $("button.navbar-toggler").click(function () {
   $(".navbar").addClass("scrolled");
 });
 
-// Contact from websit to Google Sheet
+// Contact Form
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbxTqpw3M4cOXIQHZbfSVG66cSSS14P_2O0yRL6f6JsTHQj1oc1mpgDleZbB3XjdtoHoEw/exec";
-const form = document.forms["submit-form-to-google-sheets"];
+  "https://script.google.com/macros/s/AKfycbywHVdJF2zQWLnBNgtqgyamyntHiNjQuv7CQpBJGtLJ3n7uViawgZy1_q0lAQdm9srhKQ/exec";
+const form = document.forms["grading-group-contact-form"];
 const btnKirim = document.querySelector(".btn-kirim");
 const btnLoading = document.querySelector(".btn-loading");
 const myAlert = document.querySelector(".my-alert");
-
-// Contact
-const forms = document.getElementById("form");
-const username = document.getElementById("username");
-const email = document.getElementById("email");
-const subjek = document.getElementById("subjek");
-const pesan = document.getElementById("pesan");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -63,72 +56,6 @@ form.addEventListener("submit", (e) => {
       form.reset();
     })
     .catch((error) => console.error("Error!", error.message));
-});
-
-form.addEventListener("keyup", (e) => {
-  checkInputs();
-  function checkInputs() {
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const pesanValue = pesan.value.trim();
-
-    if (usernameValue === "") {
-      setErrorFor(username, "Name cannot be blank");
-    } else {
-      setSuccessFor(username);
-    }
-
-    if (emailValue === "") {
-      setErrorFor(email, "Email cannot be blank");
-    } else if (!isEmail(emailValue)) {
-      setErrorFor(email, "Email is not valid");
-    } else {
-      setSuccessFor(email);
-    }
-
-    if (pesanValue === "") {
-      setErrorFor(pesan, "Message cannot be blank");
-    } else {
-      setSuccessFor(pesan);
-    }
-
-    // if(selectValue === 'order desain') {
-    //     setErrorFor(select, 'Are you sure? for Order');
-    // }
-    // if(selectValue === 'bertanya') {
-    //     setSuccessFor(select);
-    // }
-    // if(selectValue === 'oot') {
-    //     setSuccessFor(select);
-    // }
-    // else if(selectValue === 'kosong') {
-    //     setErrorFor(select, 'Please choose one subject');
-    // }
-
-    // else {
-    //     setSuccessFor(select, 'Yes!');
-    // }
-  }
-
-  function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector("small");
-
-    small.innerText = message;
-    formControl.className = "control-form error";
-  }
-
-  function setSuccessFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector("small");
-
-    small.innerText = message;
-    formControl.className = "control-form success";
-  }
-
-  function isEmail(email) {
-    return /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(email);
-  }
 });
 
 // footer
