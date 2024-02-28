@@ -124,13 +124,13 @@ let comments = [
     id: 1,
     text: "Yang Bener Aje, Rugi Dong😁",
     author: users["iqbal"],
-    createdAt: "2024-02-10 10:00:00",
+    createdAt: "2024-03-01 10:00:00",
   },
   {
     id: 2,
     text: "Informasinya Bagus, Dijelaskan Secara Rinci. Top",
     author: users["ilham"],
-    createdAt: "2024-02-01 11:00:00",
+    createdAt: "2024-02-28 18:00:00",
   },
 ];
 

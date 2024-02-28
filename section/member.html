@@ -48,6 +48,18 @@
         letter-spacing: 1px;
       }
 
+      /* Animation */
+      @property --rotate {
+        syntax: "<angle>";
+        initial-value: 132deg;
+        inherits: false;
+      }
+
+      :root {
+        --card-height: 65vh;
+        --card-width: calc(var(--card-height) / 1.5);
+      }
+
       /* navbar */
       .navbar {
         background-color: #000047;
@@ -80,6 +92,7 @@
         height: 450px;
         width: 300px;
         padding: 50px 20px;
+        position: relative;
         margin: 10px;
         color: #fff;
         text-align: center;
@@ -88,9 +101,9 @@
         transition: 0.5s all ease-in-out;
       }
 
-      .cards:hover {
+      /* .cards:hover {
         box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.7);
-      }
+      } */
 
       .cards img {
         width: 150px;
@@ -124,6 +137,57 @@
 
       .cards a button:hover {
         background-color: #00008b;
+      }
+
+      .cards:hover {
+        color: rgb(88 199 250 / 100%);
+        transition: color 1s;
+      }
+      .cards:hover:before,
+      .cards:hover:after {
+        animation: none;
+        opacity: 0;
+      }
+
+      .cards::before {
+        content: "";
+        width: 104%;
+        height: 102%;
+        border-radius: 8px;
+        background-image: linear-gradient(
+          var(--rotate),
+          #5ddcff,
+          #3c67e3 43%,
+          #4e00c2
+        );
+        position: absolute;
+        z-index: -1;
+        top: -1%;
+        left: -2%;
+        animation: spin 2.5s linear infinite;
+      }
+
+      .cards::after {
+        position: absolute;
+        content: "";
+        top: calc(var(--card-height) / 6);
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        transform: scale(0.8);
+        filter: blur(calc(var(--card-height) / 6));
+        background-image: linear-gradient(
+          var(--rotate),
+          #5ddcff,
+          #3c67e3 43%,
+          #4e00c2
+        );
+        opacity: 1;
+        transition: opacity 0.5s;
+        animation: spin 2.5s linear infinite;
       }
 
       .social-media a i {
@@ -263,6 +327,16 @@
         text-decoration: none;
       }
 
+      /* Keyframe */
+      @keyframes spin {
+        0% {
+          --rotate: 0deg;
+        }
+        100% {
+          --rotate: 360deg;
+        }
+      }
+
       /* media query */
       @media (max-width: 768px) {
         .profile {
@@ -369,8 +443,8 @@
       </div>
       <div class="hooh">
         <div class="cards">
-          <img src="../assets/member/uknown.jpg" />
-          <h4>M. Rafif Rasviandhi</h4>
+          <img src="../assets/member/Afif.png" />
+          <h4>R.M. Rafif Rasviandhi</h4>
           <p>Graphic Desaigner</p>
           <p>Director of Desaign and Art</p>
           <a href="https://wa.me/620895422982046"><button>Hubungi</button></a>
@@ -378,7 +452,7 @@
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.instagram.com/msholahuddinma"
+            <a href="https://www.instagram.com/"
               ><i class="fa-brands fa-instagram"></i
             ></a>
           </div>
@@ -386,7 +460,7 @@
       </div>
       <div class="hooh">
         <div class="cards">
-          <img src="../assets/member/zilfa.jpg" />
+          <img src="../assets/member/uknown.jpg" />
           <h4>Zilfa Julyafitri</h4>
           <p>Digital Marketing</p>
           <p>Social Media Marketing</p>
@@ -395,7 +469,7 @@
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.instagram.com/msholahuddinma"
+            <a href="https://www.instagram.com/zilfajlyftr"
               ><i class="fa-brands fa-instagram"></i
             ></a>
           </div>
@@ -406,7 +480,7 @@
 
     <!-- comitment start -->
     <div class="text-header">
-      <h3>Skill Yang Harus kami Miliki</h3>
+      <h3>Skill Yang Harus Kami Miliki</h3>
     </div>
 
     <section class="commitment">
@@ -565,9 +639,7 @@
       <p>
         &copy 2024 Created with
         <i class="bi bi-suit-heart-fill" style="color: yellow"></i> By
-        <a href="https://www.github.com" class="text-white fw-bold"
-          >Grading Group</a
-        >
+        <a href="../index.html" class="text-white fw-bold">Grading Group</a>
       </p>
     </footer>
 
